@@ -40,6 +40,18 @@ body h2 {
   font-weight: 300;
 }
 
+body .ux {
+  letter-spacing: .4em;
+  -webkit-transition: all var(--transition-speed);
+  transition: all var(--transition-speed);
+}
+
+body .dev {
+  letter-spacing: .1em;
+  -webkit-transition: all var(--transition-speed);
+  transition: all var(--transition-speed);
+}
+
 body ul {
   list-style-type: none;
 }
@@ -50,6 +62,17 @@ body a {
   font-size: 1.9em;
   -webkit-transition: var(--transition-speed) ease;
   transition: var(--transition-speed) ease;
+}
+
+body .icon {
+  font-size: .8em;
+  -webkit-transition: all var(--transition-speed);
+  transition: all var(--transition-speed);
+}
+
+body .icon:hover {
+  color: var(--accent-primary);
+  font-size: 1.3em;
 }
 
 body .nav-bar {
@@ -115,9 +138,9 @@ body .hero .cta-button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 4em;
-  height: .5em;
-  border: 0.12em solid var(--accent-primary);
+  width: 2.5em;
+  height: .2em;
+  border: 0.05em solid var(--accent-primary);
   background-color: transparent;
   border-radius: 34px;
   padding: .7em 1.7em;
@@ -126,6 +149,10 @@ body .hero .cta-button {
 }
 
 body .hero .cta-button p {
+  font-size: .5em;
+}
+
+body .hero .cta-button span {
   font-size: .8em;
 }
 
@@ -163,6 +190,19 @@ body .hero .right-hero:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(163, 149, 149, 0.2)), to(rgba(224, 242, 87, 0.8))), url("../assets/right-v2.jpg");
   background: linear-gradient(rgba(163, 149, 149, 0.2), rgba(224, 242, 87, 0.8)), url("../assets/right-v2.jpg");
   background-size: cover;
+}
+
+body .hero .right-hero:hover .cta-button {
+  color: var(--bg-light-primary);
+  border: 0.05em solid var(--bg-light-primary);
+}
+
+body .hero .right-hero:hover .cta-button:hover {
+  border: 0.05em solid var(--accent-primary);
+}
+
+body .hero .right-hero:hover .dev {
+  letter-spacing: .2em;
 }
 
 body .hero .right-hero span {
@@ -213,6 +253,19 @@ body .hero .left-hero:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(163, 149, 149, 0.2)), to(rgba(217, 96, 85, 0.815))), url("../assets/left.jpg");
   background: linear-gradient(rgba(163, 149, 149, 0.2), rgba(217, 96, 85, 0.815)), url("../assets/left.jpg");
   background-size: cover;
+}
+
+body .hero .left-hero:hover .cta-button {
+  color: var(--bg-light-primary);
+  border: 0.05em solid var(--bg-light-primary);
+}
+
+body .hero .left-hero:hover .cta-button:hover {
+  border: 0.05em solid var(--accent-primary);
+}
+
+body .hero .left-hero:hover .ux {
+  letter-spacing: .6em;
 }
 
 body .main {
@@ -284,7 +337,8 @@ body .main section .section-body .section-content {
 }
 
 body .main .footer {
-  height: 76vh;
+  height: auto;
+  padding: 0;
 }
 
 body .main .footer .section-body {
@@ -304,10 +358,6 @@ body .copy {
 body .copy p {
   margin: 0;
   padding: 1.3em 0px;
-}
-
-body .copy .fa-heart {
-  color: red;
 }
 
 @media only screen and (max-width: 1024px) {
