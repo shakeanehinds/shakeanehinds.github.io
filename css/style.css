@@ -97,7 +97,7 @@ a:hover {
 .right-hero {
     height: 100%;
     width: 100%;
-    background-image: url('../assets/right-v2.jpg');
+    background: linear-gradient(rgba(163, 149, 149, 0.5), rgba(163, 149, 149, 0.5)), url('../assets/right-v2.jpg');
     background-size: cover;
     transition: width 1s;
     -webkit-transition: width 1s;
@@ -116,7 +116,7 @@ a:hover {
 .left-hero {
     height: 100%;
     width: 100%;
-    background-image: url('../assets/left.jpg');
+    background: linear-gradient(rgba(163, 149, 149, 0.5), rgba(163, 149, 149, 0.5)), url('../assets/left.jpg');
     background-size: cover;
     transition:width 1s;
     -webkit-transition:width 1s;
