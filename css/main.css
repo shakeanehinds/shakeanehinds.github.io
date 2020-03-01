@@ -278,7 +278,7 @@ body .main section .section-body .section-content {
   line-height: 1.8em;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   div.hero {
     display: none;
   }
