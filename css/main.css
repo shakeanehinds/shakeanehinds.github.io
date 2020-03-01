@@ -46,7 +46,7 @@ body ul {
 
 body a {
   text-decoration: none;
-  color: white;
+  color: black;
   font-size: 1.9em;
   -webkit-transition: var(--transition-speed) ease;
   transition: var(--transition-speed) ease;
@@ -56,8 +56,6 @@ body .nav-bar {
   position: fixed;
   width: 100vw;
   height: 10%;
-  background: -webkit-gradient(linear, left top, left bottom, from(#141414), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(#141414, rgba(255, 255, 255, 0));
 }
 
 body .nav-bar .nav-list {
@@ -218,7 +216,6 @@ body .hero .left-hero:hover {
 }
 
 body .main {
-  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -241,6 +238,14 @@ body .main section {
   padding: 1.5em;
 }
 
+body .main section:nth-last-child(1) {
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(235, 235, 235, 0.61))), url("../assets/right.jpg");
+  background: linear-gradient(white, rgba(235, 235, 235, 0.61)), url("../assets/right.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--bg-primary);
+}
+
 body .main section .section-title {
   font-size: 1.5em;
   text-align: center;
@@ -248,11 +253,14 @@ body .main section .section-title {
 
 body .main section .section-body {
   width: 100%;
-  display: -ms-grid;
-  display: grid;
-  padding: 2em 0;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5em 0;
 }
 
 body .main section .section-body .section-image {
@@ -270,9 +278,36 @@ body .main section .section-body .section-image img {
 }
 
 body .main section .section-body .section-content {
-  width: 100%;
+  padding: 2em 5em;
   text-align: justify;
   line-height: 1.8em;
+}
+
+body .main .footer {
+  height: 76vh;
+}
+
+body .main .footer .section-body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+body .copy {
+  width: 100%;
+  text-align: center;
+  background-color: var(--bg-primary);
+  color: var(--bg-light-primary);
+}
+
+body .copy p {
+  margin: 0;
+  padding: 1.3em 0px;
+}
+
+body .copy .fa-heart {
+  color: red;
 }
 
 @media only screen and (max-width: 1024px) {

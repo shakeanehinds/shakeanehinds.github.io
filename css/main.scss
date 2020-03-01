@@ -45,7 +45,7 @@ body{
     
     a {
         text-decoration: none;
-        color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
         font-size: 1.9em;
         transition: var(--transition-speed) ease;
 
@@ -59,7 +59,8 @@ body{
         position: fixed;
         width: 100vw;
         height: 10%;
-        background: linear-gradient(rgba(20, 20, 20, 1), rgba(255, 255, 255, 0));
+        // background: linear-gradient(rgba(20, 20, 20, 1), rgba(255, 255, 255, 0));
+        // background-color: var(--bg-primary);
         .nav-list {
             width: 100%;
             padding: 0;
@@ -176,7 +177,7 @@ body{
     }
     
     .main{
-        width: 100%;
+        // width: 100%;
         display: grid;
         // grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
         grid-template-columns: 1fr;
@@ -187,15 +188,24 @@ body{
             justify-content: center;
             align-content: center;
             padding: 1.5em;
+
+            &:nth-last-child(1){
+                background: linear-gradient(rgb(255, 255, 255), rgba(235, 235, 235, 0.61)), url('../assets/right.jpg');
+                background-attachment: fixed;
+                background-size: cover;
+                color: var(--bg-primary);
+            }
+
             .section-title{
                 font-size: 1.5em;
                 text-align: center;
             }
             .section-body{
                 width: 100%;
-                display: grid;
-                padding: 2em 0;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                display: flex;
+                flex-direction: column;
+                padding: 5em 0;
+                // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 // column-gap: 2em;
 
                 .section-image {
@@ -211,12 +221,38 @@ body{
                     }
                 }
                 .section-content{
-                    width: 100%;
+                    // width: 100%;
+                    padding: 2em 5em;
                     text-align: justify;
                     line-height: 1.8em;
                 }
             }
             
+        }
+        .footer{
+            height: 76vh;
+        }
+
+        .footer .section-body{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            // grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    .copy{
+        width: 100%;
+        text-align: center;
+        background-color: var(--bg-primary);
+        color: var(--bg-light-primary);
+
+        p{
+            margin: 0;
+            padding: 1.3em 0px;
+        }
+
+        .fa-heart{
+            color: red;
         }
     }
 
