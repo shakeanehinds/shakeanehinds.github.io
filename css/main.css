@@ -413,7 +413,7 @@ body .info .icon {
 }
 
 @media only screen and (max-width: 1024px) {
-  div.hero {
+  div.hero, div.info {
     display: none;
   }
   .main {
