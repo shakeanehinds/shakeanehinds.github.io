@@ -62,6 +62,7 @@ body .nav-bar {
 
 body .nav-bar .nav-list {
   width: 100%;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,16 +167,12 @@ body .hero .right-hero:hover {
   background-size: cover;
 }
 
+body .hero .right-hero span {
+  padding: 0 0 0 .7em;
+}
+
 body .hero .right-hero h1 {
   font-family: 'Source Code Pro';
-}
-
-body .hero .right-hero a {
-  color: var(--accent-primary);
-}
-
-body .hero .right-hero a:hover {
-  color: var(--bg-light-primary);
 }
 
 body .hero .left-hero {
@@ -207,6 +204,10 @@ body .hero .left-hero {
 
 body .hero .left-hero h1 {
   font-family: 'Open Sans';
+}
+
+body .hero .left-hero span {
+  padding: 0 .7em 0 0;
 }
 
 body .hero .left-hero:hover {
