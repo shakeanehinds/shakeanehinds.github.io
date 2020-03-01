@@ -250,6 +250,7 @@ body .main section .section-body {
   width: 100%;
   display: -ms-grid;
   display: grid;
+  padding: 2em 0;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
@@ -257,18 +258,13 @@ body .main section .section-body {
 body .main section .section-body .section-image {
   width: 15em;
   height: 15em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body .main section .section-body .section-image img {
+  text-align: center;
   width: 100%;
   border-radius: 100%;
 }
@@ -282,6 +278,9 @@ body .main section .section-body .section-content {
 @media only screen and (max-width: 1024px) {
   div.hero {
     display: none;
+  }
+  .main {
+    padding: 13% 0 0 0;
   }
 }
 /*# sourceMappingURL=main.css.map */

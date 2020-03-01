@@ -194,16 +194,18 @@ body{
             .section-body{
                 width: 100%;
                 display: grid;
+                padding: 2em 0;
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 // column-gap: 2em;
 
                 .section-image {
                     width: 15em;
                     height: 15em;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
                     img{
+                        text-align: center;
                         width: 100%;
                         border-radius: 100%;
                     }
@@ -225,5 +227,8 @@ body{
 @media only screen and (max-width: 1024px) {
     div.hero{
         display: none;
+    }
+    .main{
+       padding: 13% 0 0 0; 
     }
   }
