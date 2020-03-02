@@ -1,6 +1,5 @@
 :root{
     font-size: 16px;
-    font-family: 'Open Sans';
     font-family: 'Source Code Pro';
     --text-primary: #b6b6b6;
     --text-secondary: #ececec;
@@ -44,6 +43,17 @@ body{
         font-weight: 300;
     }
 
+    
+    ul {
+        list-style-type: none;
+    }
+    
+    a {
+        text-decoration: none;
+        color: var(--bg-primary);
+        font-size: 1.9em;
+        transition: var(--transition-speed) ease;
+    }
     .ux{
         font-weight: 400;
         letter-spacing: .4em;
@@ -55,16 +65,8 @@ body{
         letter-spacing: .1em;
         transition: all var(--transition-speed);
     }
-
-    ul {
-        list-style-type: none;
-    }
-    
-    a {
-        text-decoration: none;
-        color: var(--bg-primary);
-        font-size: 1.9em;
-        transition: var(--transition-speed) ease;
+    .center{
+        text-align: center;
     }
     .icon{
         font-size: .8em;
@@ -264,7 +266,13 @@ body{
             }
         }
     }
-    
+    .hero-mobile{
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
     .main{
         // width: 100%;
         display: grid;
@@ -402,11 +410,14 @@ body{
     div.hero, div.info{
         display: none;
     }
+    div.hero-mobile{
+        display: flex;
+    }
     .main{
        padding: 13% 0 0 0; 
 
        p{
-           font-size: 1.3em;
+           font-size: 1.5em;
        }
     }
   }
