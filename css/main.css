@@ -381,6 +381,7 @@ body .main section div.two {
 }
 
 body .main section:nth-last-child(1) {
+  background-color: var(--bg-light-primary);
   background: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(235, 235, 235, 0.61))), url("../assets/right.jpg");
   background: linear-gradient(white, rgba(235, 235, 235, 0.61)), url("../assets/right.jpg");
   background-attachment: fixed;

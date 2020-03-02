@@ -293,6 +293,7 @@ body{
             }
             
             &:nth-last-child(1){
+                background-color: var(--bg-light-primary);
                 background: linear-gradient(rgb(255, 255, 255), rgba(235, 235, 235, 0.61)), url('../assets/right.jpg');
                 background-attachment: fixed;
                 background-size: cover;
