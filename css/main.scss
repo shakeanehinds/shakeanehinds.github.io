@@ -7,7 +7,8 @@
     --bg-primary: #23232e;
     --bg-secondary: #141418;
     --bg-light-primary: #ffffff;
-    --accent-primary: rgba(231, 64, 223, 0.815);
+    // --accent-primary: rgba(231, 64, 223, 0.815);
+    --accent-primary: #FFDB58;
     --transition-speed: 600ms;
 }
 
@@ -34,21 +35,23 @@ body{
     }
 
     h1{
-        font-size: 3.5em;
+        font-size: 2.5em;
         font-weight: 700;
     }
 
     h2{
-        font-size: 2.3em;
+        font-size: 1.3em;
         font-weight: 300;
     }
 
     .ux{
+        font-weight: 400;
         letter-spacing: .4em;
         transition: all var(--transition-speed);
     }
     
     .dev{
+        font-weight: 400;
         letter-spacing: .1em;
         transition: all var(--transition-speed);
     }
@@ -59,22 +62,34 @@ body{
     
     a {
         text-decoration: none;
-        color: rgb(0, 0, 0);
+        color: var(--bg-primary);
         font-size: 1.9em;
         transition: var(--transition-speed) ease;
-
-        &:hover {
-            // color: rgba(231, 64, 223, 0.815);
-            // color: #8556A6;
-        }
     }
     .icon{
         font-size: .8em;
-        transition: all var(--transition-speed);
+        transition: all .3s ease-in-out;
+
+        &:hover{
+            font-size: 1.3em;
+
+            .fa-behance{
+                color: #053eFF;
+            }
+            .fa-github{
+                color: var(--accent-primary);
+            }
+            .fa-linkedin{
+                color: #2867B2;
+            }
+            .fa-envelope{
+                color: var(--accent-primary);
+            }
     }
-    .icon:hover{
+    }
+    .pop:hover{
         color: var(--accent-primary);
-        font-size: 1.3em;
+        
     }
 
     .nav-bar{
@@ -83,17 +98,19 @@ body{
         height: 10%;
         z-index: 2;
         // background: linear-gradient(rgba(20, 20, 20, 1), rgba(255, 255, 255, 0));
-        // background-color: var(--bg-primary);
+        // background-color: var(--bg-light-primary);
         .nav-list {
             width: 100%;
+            height: 100%;
             padding: 0;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             justify-content: space-around;
         }
 
-        a{
+        .bar{
             &::after {
                 display:block;
                 content: '';
@@ -115,6 +132,14 @@ body{
         align-items: center;
         justify-items: center;
 
+        .name{
+            position: absolute;
+            top:48%;
+            font-family: 'Open Sans';
+            text-transform: uppercase;
+            letter-spacing: .5em;
+
+        }
         .cta-button{
             display: flex;
             align-items: center;
@@ -128,6 +153,7 @@ body{
             transition: var(--transition-speed);
             p{
                 font-size: .5em;
+                font-weight: 700;
             }
 
             span{
@@ -139,7 +165,11 @@ body{
         }
         .cta-button:hover{
             background-color: var(--accent-primary);
-            border-color: var(--bg-light-primary);
+            border-color: var(--accent-primary);
+            p, i{
+
+                color: var(--bg-primary);
+            }
         }
 
         .right-hero {
@@ -156,9 +186,17 @@ body{
             align-items: center;
             justify-content: center;
             
+            h2{
+                position: absolute;
+                top: 60%;
+            }
+            a{
+                position: absolute;
+                top: 70%;
+            }
             &:hover {
                 width: 180%;
-                background: linear-gradient(rgba(163, 149, 149, 0.2), rgba(224, 242, 87, 0.8)), url('../assets/right-v2.jpg');
+                background: linear-gradient(rgba(163, 149, 149, 0.2), rgba(224, 242, 87, 0.5)), url('../assets/right-v2.jpg');
                 background-size: cover;
 
                 .cta-button{
@@ -172,15 +210,10 @@ body{
                 .dev{
                     letter-spacing: .2em;
                 }
-
             }
 
             span{
                 padding: 0 0 0 .7em;
-            }
-
-            h1{
-                font-family: 'Source Code Pro';
             }
             
         }
@@ -200,18 +233,21 @@ body{
             align-items: center;
             justify-content: center;
             font-family: 'Open Sans';
-    
-            h1{
-                font-family: 'Open Sans';
+            h2{
+                position: absolute;
+                top: 60%;
             }
-
+            a{
+                position: absolute;
+                top: 70%;
+            }
             span{
                 padding: 0 .7em 0 0;
             }
 
             &:hover{
                 width: 180%;
-                background: linear-gradient(rgba(163, 149, 149, 0.2), rgba(217, 96, 85, 0.815)), url('../assets/left.jpg');
+                background: linear-gradient(rgba(163, 149, 149, 0.2), rgba(217, 96, 85, 0.5)), url('../assets/left.jpg');
                 background-size: cover;
 
                 .cta-button{
@@ -234,15 +270,20 @@ body{
         display: grid;
         // grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
         grid-template-columns: 1fr;
-
+        
         section{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-content: center;
-            padding: 1.5em;
+            padding: 1.5em 0;
             font-family: 'Open Sans';
-
+            
+            div.two{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            }
+            
             &:nth-last-child(1){
                 background: linear-gradient(rgb(255, 255, 255), rgba(235, 235, 235, 0.61)), url('../assets/right.jpg');
                 background-attachment: fixed;
@@ -253,11 +294,18 @@ body{
             &:nth-child(2n){
                 background-color: var(--bg-primary);
                 color: var(--bg-light-primary);
+
+                .section-title{
+                    color: var(--accent-primary);
+                }
             }
             .section-title{
-                font-size: 1.5em;
+                font-size: 1.5rem;
                 text-align: center;
+                text-transform: uppercase;
+                letter-spacing: .8rem;
             }
+
             .section-body{
                 width: 100%;
                 display: flex;
@@ -283,6 +331,10 @@ body{
                     padding: 2em 5em;
                     text-align: justify;
                     line-height: 2.5em;
+
+                    h2{
+                        text-align: center;
+                    }
                 }
             }
             
@@ -290,12 +342,6 @@ body{
         .footer{
             height: auto;
             padding: 0;
-        }
-
-        .footer .section-body{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            // grid-template-columns: 1fr 1fr 1fr;
         }
     }
 
@@ -312,18 +358,29 @@ body{
     }
 
     .info{
+        background-color: transparent;
         width: 14%;
         height: 5.5%;
-        background-color: var(--bg-light-primary);
         border-radius: 1.6em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         position: absolute;
         z-index: 0;
         right: 5%;
         top: 90%;
 
+        .inner{
+            background-color: var(--bg-light-primary);
+            width: 100%;
+            border-radius: 1.6em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // clip-path: circle(10% at 19% 50%);
+            // transition: clip-path var(--transition-speed) ease-in-out;
+        }
+
+        // &:hover .inner{
+        //     clip-path: circle(150% at 10% 100%);
+        // }
         .tip{
             display: inline;
             font-size: .8em;
@@ -341,11 +398,22 @@ body{
 
 
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
     div.hero, div.info{
         display: none;
     }
     .main{
        padding: 13% 0 0 0; 
+
+       p{
+           font-size: 1.3em;
+       }
     }
+  }
+
+  @media only screen and (max-width: 1024){
+      div.hero, div.info{
+        display: none;
+    }
+
   }
