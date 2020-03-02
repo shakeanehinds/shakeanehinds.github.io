@@ -1,6 +1,5 @@
 :root {
   font-size: 16px;
-  font-family: 'Open Sans';
   font-family: 'Source Code Pro';
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
@@ -54,6 +53,18 @@ body h2 {
   font-weight: 300;
 }
 
+body ul {
+  list-style-type: none;
+}
+
+body a {
+  text-decoration: none;
+  color: var(--bg-primary);
+  font-size: 1.9em;
+  -webkit-transition: var(--transition-speed) ease;
+  transition: var(--transition-speed) ease;
+}
+
 body .ux {
   font-weight: 400;
   letter-spacing: .4em;
@@ -68,16 +79,8 @@ body .dev {
   transition: all var(--transition-speed);
 }
 
-body ul {
-  list-style-type: none;
-}
-
-body a {
-  text-decoration: none;
-  color: var(--bg-primary);
-  font-size: 1.9em;
-  -webkit-transition: var(--transition-speed) ease;
-  transition: var(--transition-speed) ease;
+body .center {
+  text-align: center;
 }
 
 body .icon {
@@ -331,6 +334,21 @@ body .hero .left-hero:hover .ux {
   letter-spacing: .6em;
 }
 
+body .hero-mobile {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
 body .main {
   display: -ms-grid;
   display: grid;
@@ -480,11 +498,16 @@ body .info .icon {
   div.hero, div.info {
     display: none;
   }
+  div.hero-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .main {
     padding: 13% 0 0 0;
   }
   .main p {
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
 }
 
