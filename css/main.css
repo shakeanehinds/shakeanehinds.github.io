@@ -494,7 +494,7 @@ body .info .icon {
           animation: rotate 1.5s linear infinite;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   div.hero, div.info {
     display: none;
   }
@@ -507,13 +507,7 @@ body .info .icon {
     padding: 13% 0 0 0;
   }
   .main p {
-    font-size: 1.5em;
-  }
-}
-
-@media only screen and (max-width: 1024) {
-  div.hero, div.info {
-    display: none;
+    font-size: .8em;
   }
 }
 /*# sourceMappingURL=main.css.map */

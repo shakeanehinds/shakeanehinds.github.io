@@ -406,7 +406,7 @@ body{
 
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
     div.hero, div.info{
         display: none;
     }
@@ -417,14 +417,7 @@ body{
        padding: 13% 0 0 0; 
 
        p{
-           font-size: 1.5em;
+           font-size: .8em;
        }
     }
-  }
-
-  @media only screen and (max-width: 1024){
-      div.hero, div.info{
-        display: none;
-    }
-
   }
