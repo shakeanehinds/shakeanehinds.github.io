@@ -35,7 +35,7 @@
     <!-- hero desktop -->
     <div class="hero">
 
-        <div class="left-hero">
+        <div id="left" class="left-hero left-hov">
 
             <h1 class="name">Shakeane</h1>
             <h2 class="title ux">UI/UX Designer 🎨</h2>
@@ -48,7 +48,7 @@
 
 
         </div>
-        <div class="right-hero">
+        <div id="right" class="right-hero right-hov">
 
             <h1 class="name">Hinds</h1>
             <h2 class="title dev">💻 Software Developer</h2>
@@ -1255,9 +1255,9 @@
                     <p>I enjoy being apart of this positive movement, my dream is to improve the lives of our people
                         through the use of technology, making tech more accessible to those with disabilities and
                         improving the experience people have when they interface with software.</p>
-                    </div>
-                    <div class="section-content">
-                        <h3>Title</h3>
+                </div>
+                <div class="section-content">
+                    <h3>Title</h3>
                     <p>By doing my part as a software developer I want to breathe life into ideas, build amazing user
                         experiences and develop software solutions that will literally shape the future. Striking the
                         balance between visually captivating and near-perfect execution is my end goal of becoming an
@@ -1271,15 +1271,19 @@
         <p>Made with <i class="fas fa-heart icon pop"></i> and a potato</p>
     </div>
     <div class="info">
-
         <div class="inner">
             <i class="fas fa-cog icon pop"></i>
-
             <h3 class="tip">In Development..</h3>
-
         </div>
-
     </div>
+        <div class="info-left">
+            <div href="#" onclick="kill_motion()">
+                <div class="inner">
+                    <i id="timesbtn" class="fas fa-times-circle"></i>
+                    <h3 class="tip">Toggle hover effect</h3>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>

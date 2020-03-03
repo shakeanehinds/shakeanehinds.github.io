@@ -118,6 +118,9 @@ body .nav-bar {
   width: 100vw;
   height: 10%;
   z-index: 2;
+  background-color: transparent;
+  -webkit-transition: background-color var(--transition-speed) ease-out;
+  transition: background-color var(--transition-speed) ease-out;
 }
 
 body .nav-bar .nav-list {
@@ -255,28 +258,28 @@ body .hero .right-hero a {
   top: 70%;
 }
 
-body .hero .right-hero:hover {
+body .hero .right-hero span {
+  padding: 0 0 0 .7em;
+}
+
+body .hero .right-hov:hover {
   width: 180%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(163, 149, 149, 0.2)), to(rgba(224, 242, 87, 0.5))), url("../assets/right-v2.jpg");
   background: linear-gradient(rgba(163, 149, 149, 0.2), rgba(224, 242, 87, 0.5)), url("../assets/right-v2.jpg");
   background-size: cover;
 }
 
-body .hero .right-hero:hover .cta-button {
+body .hero .right-hov:hover .cta-button {
   color: var(--bg-light-primary);
   border: 0.05em solid var(--bg-light-primary);
 }
 
-body .hero .right-hero:hover .cta-button:hover {
+body .hero .right-hov:hover .cta-button:hover {
   border: 0.05em solid var(--accent-primary);
 }
 
-body .hero .right-hero:hover .dev {
+body .hero .right-hov:hover .dev {
   letter-spacing: .2em;
-}
-
-body .hero .right-hero span {
-  padding: 0 0 0 .7em;
 }
 
 body .hero .left-hero {
@@ -320,23 +323,23 @@ body .hero .left-hero span {
   padding: 0 .7em 0 0;
 }
 
-body .hero .left-hero:hover {
+body .hero .left-hov:hover {
   width: 180%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(163, 149, 149, 0.2)), to(rgba(217, 96, 85, 0.5))), url("../assets/left.jpg");
   background: linear-gradient(rgba(163, 149, 149, 0.2), rgba(217, 96, 85, 0.5)), url("../assets/left.jpg");
   background-size: cover;
 }
 
-body .hero .left-hero:hover .cta-button {
+body .hero .left-hov:hover .cta-button {
   color: var(--bg-light-primary);
   border: 0.05em solid var(--bg-light-primary);
 }
 
-body .hero .left-hero:hover .cta-button:hover {
+body .hero .left-hov:hover .cta-button:hover {
   border: 0.05em solid var(--accent-primary);
 }
 
-body .hero .left-hero:hover .ux {
+body .hero .left-hov:hover .ux {
   letter-spacing: .6em;
 }
 
@@ -473,7 +476,12 @@ body .copy p {
   padding: 1.3em 0px;
 }
 
-body .info {
+body .info-left {
+  left: 5%;
+  cursor: pointer;
+}
+
+body .info, body .info-left {
   background-color: transparent;
   width: 14%;
   height: 5.5%;
@@ -484,7 +492,7 @@ body .info {
   top: 90%;
 }
 
-body .info .inner {
+body .info .inner, body .info-left .inner {
   background-color: var(--bg-light-primary);
   width: 100%;
   border-radius: 1.6em;
@@ -499,13 +507,13 @@ body .info .inner {
           align-items: center;
 }
 
-body .info .tip {
+body .info .tip, body .info-left .tip {
   display: inline;
   font-size: .8em;
   padding: 0 .5em;
 }
 
-body .info .icon {
+body .info .icon, body .info-left .icon {
   -webkit-animation: rotate 1.5s linear infinite;
           animation: rotate 1.5s linear infinite;
 }
