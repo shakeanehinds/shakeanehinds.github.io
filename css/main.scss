@@ -127,6 +127,11 @@ body{
         }
     }
 
+    .nav-bg{
+        background-color: var(--bg-light-primary);
+        transition: background-color var(--transition-speed) ease-in;
+    }
+
     .hero {
         height: 100vh;
         display: flex;
@@ -359,7 +364,9 @@ body{
         text-align: center;
         background-color: var(--bg-primary);
         color: var(--bg-light-primary);
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
         p{
             margin: 0;
             padding: 1.3em 0px;
