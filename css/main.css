@@ -518,6 +518,14 @@ body .info .icon, body .info-left .icon {
           animation: rotate 1.5s linear infinite;
 }
 
+body .fa-times-circle {
+  color: red;
+}
+
+body .fa-check-circle {
+  color: green;
+}
+
 @media only screen and (max-width: 1024px) {
   div.hero, div.info, div.info-left {
     display: none;
