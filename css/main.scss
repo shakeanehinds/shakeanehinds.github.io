@@ -99,6 +99,8 @@ body{
         width: 100vw;
         height: 10%;
         z-index: 2;
+        background-color: transparent;
+        transition: background-color var(--transition-speed) ease-out;
         // background: linear-gradient(rgba(20, 20, 20, 1), rgba(255, 255, 255, 0));
         // background-color: var(--bg-light-primary);
         .nav-list {
@@ -125,6 +127,11 @@ body{
                 transform: scaleX(1);
               }
         }
+    }
+
+    .nav-bg{
+        background-color: var(--bg-light-primary);
+        transition: background-color var(--transition-speed) ease-in;
     }
 
     .hero {
@@ -196,7 +203,15 @@ body{
                 position: absolute;
                 top: 70%;
             }
-            &:hover {
+
+            span{
+                padding: 0 0 0 .7em;
+            }
+            
+        }
+
+        .right-hov{
+             &:hover {
                 width: 180%;
                 background: linear-gradient(rgba(163, 149, 149, 0.2), rgba(224, 242, 87, 0.5)), url('../assets/right-v2.jpg');
                 background-size: cover;
@@ -213,11 +228,6 @@ body{
                     letter-spacing: .2em;
                 }
             }
-
-            span{
-                padding: 0 0 0 .7em;
-            }
-            
         }
     
         .left-hero {
@@ -246,6 +256,9 @@ body{
             span{
                 padding: 0 .7em 0 0;
             }
+        }
+
+        .left-hov{
 
             &:hover{
                 width: 180%;
@@ -359,14 +372,20 @@ body{
         text-align: center;
         background-color: var(--bg-primary);
         color: var(--bg-light-primary);
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
         p{
             margin: 0;
             padding: 1.3em 0px;
         }
     }
 
-    .info{
+    .info-left{
+      left: 5%;
+      cursor: pointer;
+    }
+    .info, .info-left{
         background-color: transparent;
         width: 14%;
         height: 5.5%;
@@ -403,12 +422,19 @@ body{
        
         
     }
+
+    .fa-times-circle{
+        color: red;
+    }
+    .fa-check-circle{
+        color: green;
+    }
 }
 
 
 
 @media only screen and (max-width: 1024px) {
-    div.hero, div.info{
+    div.hero, div.info, div.info-left{
         display: none;
     }
     div.hero-mobile{
