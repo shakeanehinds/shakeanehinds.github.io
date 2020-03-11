@@ -2,4 +2,4 @@
 
 ## Everything about me, smushed together in one place :smiley:
 
-    [you can view by going to] (https://shakeanehinds.github.io/)
+    You can view by going to https://shakeanehinds.github.io/
