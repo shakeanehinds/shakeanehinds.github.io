@@ -2,13 +2,22 @@
 
 window.addEventListener("scroll", function(e) {
   var nav = document.getElementById("nav");
+  var nav_links = document.getElementById("nav-links");
+  var links = nav_links.getElementsByTagName("a");
+  var i;
   if (
     document.documentElement.scrollTop ||
     document.body.scrollTop > window.innerHeight
   ) {
     nav.classList.add("nav-bg");
+    for (i = 0; i < links.length; i++) {
+      links[i].style.color = "white";
+    }
   } else {
     nav.classList.remove("nav-bg");
+    for (i = 0; i < links.length; i++) {
+      links[i].style.color = "#23232e";
+    }
   }
 });
 

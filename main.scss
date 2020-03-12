@@ -53,7 +53,7 @@ body {
     text-decoration: none;
     color: var(--bg-primary);
     font-size: 1.9em;
-    transition: var(--transition-speed) ease;
+    transition: all var(--transition-speed) ease-in;
   }
   .ux {
     font-weight: 400;
@@ -79,10 +79,10 @@ body {
       .fa-behance {
         color: #053eff;
       }
-      .fa-github {
+      .fa-github-alt {
         color: var(--accent-primary);
       }
-      .fa-linkedin {
+      .fa-linkedin-in {
         color: #2867b2;
       }
       .fa-envelope {
@@ -130,7 +130,7 @@ body {
   }
 
   .nav-bg {
-    background-color: var(--bg-light-primary);
+    background-color: var(--bg-primary);
     transition: background-color var(--transition-speed) ease-in;
   }
 
@@ -346,9 +346,32 @@ body {
         width: 100%;
         display: flex;
         flex-direction: column;
+        justify-items: center;
+        align-items: center;
         padding: 5em 0;
         // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         // column-gap: 2em;
+
+        .card-container {
+          width: 60%;
+          margin: 1em 0;
+          padding: 1em;
+          border-radius: 0.7em;
+          border: 2px solid white;
+          display: flex;
+          flex-direction: column;
+          background-color: var(--bg-light-primary);
+          background: linear-gradient(
+              rgba(13, 10, 32, 0.7),
+              rgba(13, 10, 32, 0.7)
+            ),
+            url("/assets/right.jpg");
+          background-size: cover;
+
+          .card-img {
+            display: none;
+          }
+        }
 
         .section-image {
           width: 15em;
