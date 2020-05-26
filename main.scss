@@ -35,6 +35,11 @@ body {
     background: var(--accent-primary);
   }
 
+  .container {
+    margin: 0 auto;
+    position: relative;
+    max-width: 2560px;
+  }
   h1 {
     font-size: 2.5em;
     font-weight: 700;
@@ -97,6 +102,7 @@ body {
   .nav-bar {
     position: fixed;
     width: 100vw;
+    max-width: 2560px;
     height: 10%;
     z-index: 2;
     background-color: transparent;
@@ -140,6 +146,7 @@ body {
     justify-content: space-between;
     align-items: center;
     justify-items: center;
+    position: relative;
 
     .hero-name {
       display: flex;
@@ -467,7 +474,7 @@ body {
   .info,
   .info-left {
     background-color: transparent;
-    width: 14%;
+    width: 15%;
     height: 5.5%;
     border-radius: 1.6em;
     position: absolute;
