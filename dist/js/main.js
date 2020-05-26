@@ -1,6 +1,6 @@
 // ======= Handling menu color changes on scrolling =====//
 
-window.addEventListener("scroll", function(e) {
+window.addEventListener("scroll", function (e) {
   var nav = document.getElementById("nav");
   var nav_links = document.getElementById("nav-links");
   var links = nav_links.getElementsByTagName("a");
