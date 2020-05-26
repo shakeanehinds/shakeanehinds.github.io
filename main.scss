@@ -53,7 +53,7 @@ body {
     text-decoration: none;
     color: var(--bg-primary);
     font-size: 1.9em;
-    transition: var(--transition-speed) ease;
+    transition: all var(--transition-speed) ease-in;
   }
   .ux {
     font-weight: 400;
@@ -79,10 +79,10 @@ body {
       .fa-behance {
         color: #053eff;
       }
-      .fa-github {
+      .fa-github-alt {
         color: var(--accent-primary);
       }
-      .fa-linkedin {
+      .fa-linkedin-in {
         color: #2867b2;
       }
       .fa-envelope {
@@ -130,7 +130,7 @@ body {
   }
 
   .nav-bg {
-    background-color: var(--bg-light-primary);
+    background-color: var(--bg-primary);
     transition: background-color var(--transition-speed) ease-in;
   }
 
@@ -141,6 +141,21 @@ body {
     align-items: center;
     justify-items: center;
 
+    .hero-name {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      position: absolute;
+      top: 30%;
+      font-family: "Source Code Pro";
+      text-transform: uppercase;
+      letter-spacing: 0.5em;
+
+      h1 {
+        font-size: 4em;
+        text-shadow: 6px 4px var(--accent-primary);
+      }
+    }
     .name {
       position: absolute;
       top: 48%;
@@ -346,9 +361,60 @@ body {
         width: 100%;
         display: flex;
         flex-direction: column;
+        justify-items: center;
+        align-items: center;
         padding: 5em 0;
         // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         // column-gap: 2em;
+        .project-card {
+          padding: 1.5em 0;
+          font-family: "Source Code Pro";
+          width: 60%;
+
+          h3 {
+            color: var(--accent-primary);
+            font-size: 1.6em;
+          }
+          h4 {
+            font-weight: 400;
+            font-size: 1em;
+            letter-spacing: 0.1em;
+          }
+          p {
+            text-align: justify;
+          }
+          img {
+            width: 100%;
+          }
+          .tags {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+
+            .tag-icon {
+              display: flex;
+              align-items: center;
+              background-color: var(--bg-secondary);
+              margin: 0 1em 0 0;
+              height: 2em;
+              border-radius: 100px;
+              h6 {
+                color: var(--accent-primary);
+                padding: 1em;
+              }
+            }
+          }
+          .tip {
+            font-size: 0.5em;
+            color: var(--text-secondary);
+            transition: ease-in 0.3s;
+
+            &:hover {
+              cursor: pointer;
+              color: var(--accent-primary);
+            }
+          }
+        }
 
         .section-image {
           width: 15em;
