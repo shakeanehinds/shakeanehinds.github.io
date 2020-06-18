@@ -47,11 +47,11 @@ async function getGithubRepos(user) {
     `https://api.github.com/users/${user}/repos?sort=pushed`
   );
 
-  let repos = (await response.json()).slice(0, 3);
-  localStorage.setItem("repocache", repos);
-  for (let repo of repos) {
-    console.log(repo);
-  }
+  let repos = (await response.json()).slice(0, 6);
+
+  // localStorage.setItem("repos", JSON.stringify(repos));
+  // let repos = JSON.parse(localStorage.getItem("repos"));
+
   // Fetch repositories
 
   const projectListing = document.getElementById("project-listings");
@@ -106,7 +106,6 @@ async function getGithubRepos(user) {
     link.appendChild(tip);
 
     cta.appendChild(link);
-    console.log(cta);
 
     curr_repo = repo.name;
     let languages = await fetch(
@@ -114,7 +113,9 @@ async function getGithubRepos(user) {
     );
 
     let langs = await languages.json();
-    console.log(langs);
+
+    // localStorage.setItem("langs", JSON.stringify(langs));
+    // langs = JSON.parse(localStorage.getItem("langs"));
 
     for (let lang of Object.keys(langs)) {
       let tagIcon = document.createElement("div");
@@ -123,16 +124,13 @@ async function getGithubRepos(user) {
       let lang_ = document.createElement("h6");
 
       // Attempting to add icons for langauges
-
-      // let tagInnerIcon = document.createElement("i");
-      // tagInnerIcon.classList.add(
-      //   "fab " + lang.includes("") ? "fa-js" : "fa-code"
-      // );
-      // lang_.appendChild(tagInnerIcon);
-
-      //
-
+      let results = iconfilter(lang);
       lang_.innerText = lang;
+      lang_.innerHTML =
+        `<i class="${results[0]} ${results[1]}"></i>          ` +
+        lang_.innerHTML;
+
+      // console.log(iconfilter(lang));
 
       tagIcon.appendChild(lang_);
       tags.appendChild(tagIcon);
@@ -145,8 +143,27 @@ async function getGithubRepos(user) {
     content.appendChild(cta);
     projectCard.appendChild(cardImage);
     projectCard.appendChild(content);
-    console.log(projectCard);
 
     document.getElementById("projects").appendChild(projectCard);
   }
+}
+
+function iconfilter(icon) {
+  let languageBank = [
+    { name: "javascript", class: "fab fa-js" },
+    { name: "css", class: "fab fa-css3-alt" },
+    { name: "sass", class: "fab fa-sass" },
+    { name: "angular", class: "fab fa-angular" },
+    { name: "html", class: "fab fa-html5" },
+    { name: "react", class: "fab fa-react" },
+    { name: "python", class: "fab fa-python" },
+    { name: "php", class: "fab fa-php" },
+    { name: "java", class: "fab fa-java" },
+  ];
+
+  let iconClass = languageBank.filter(function (e) {
+    return icon.toLowerCase().includes(e.name);
+  });
+  let res = iconClass.length > 0 ? iconClass[0].class : "fas fa-code";
+  return res.split(" ");
 }
