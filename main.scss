@@ -571,9 +571,6 @@ body {
           padding: 3em 20px;
           clear: both;
           text-align: left;
-          &:not(:first-child) {
-            margin-top: -60px;
-          }
           .title {
             font-size: 32px;
             margin-bottom: 12px;
@@ -612,7 +609,7 @@ body {
   }
 }
 
-@media only screen and (min-device-width: 1025px) {
+@media only screen and (min-width: 1025px) {
   .timeline {
     position: relative;
     width: 100%;
