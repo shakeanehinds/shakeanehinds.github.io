@@ -338,15 +338,6 @@ body {
       }
 
       &:nth-last-child(1) {
-        background-color: var(--bg-light-primary);
-        background: linear-gradient(
-            rgb(255, 255, 255),
-            rgba(235, 235, 235, 0.61)
-          ),
-          url("/assets/right.jpg");
-        background-attachment: fixed;
-        background-size: cover;
-        color: var(--bg-primary);
       }
 
       &:nth-child(2n) {
@@ -380,6 +371,9 @@ body {
           padding: 10% 15% 0 15%;
           transition: ease-in var(--transition-speed);
 
+          .card-title {
+            text-transform: capitalize;
+          }
           h3 {
             color: var(--accent-primary);
             font-size: 1.6em;
@@ -409,6 +403,7 @@ body {
               height: 2em;
               border-radius: 100px;
               transition: ease-in 0.3s;
+
               h6 {
                 color: var(--accent-primary);
                 padding: 1em;
@@ -466,6 +461,7 @@ body {
     .footer {
       height: auto;
       padding: 0;
+      background-color: var(--text-secondary);
     }
   }
 
@@ -610,6 +606,14 @@ body {
 }
 
 @media only screen and (min-width: 1025px) {
+  .footer {
+    background-color: var(--bg-light-primary);
+    background: linear-gradient(rgb(255, 255, 255), rgba(235, 235, 235, 0.61)),
+      url("/assets/right.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--bg-primary);
+  }
   .timeline {
     position: relative;
     width: 100%;
