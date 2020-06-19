@@ -9,6 +9,7 @@ window.addEventListener("scroll", function (e) {
   var nav_links = document.getElementById("nav-links");
   var links = nav_links.getElementsByTagName("a");
   var i;
+  var twitter = document.getElementById("twitter");
   if (
     document.documentElement.scrollTop ||
     document.body.scrollTop > window.innerHeight
@@ -17,11 +18,13 @@ window.addEventListener("scroll", function (e) {
     for (i = 0; i < links.length; i++) {
       links[i].style.color = "white";
     }
+    twitter.classList.add("slide-in-right");
   } else {
     nav.classList.remove("nav-bg");
     for (i = 0; i < links.length; i++) {
       links[i].style.color = "#23232e";
     }
+    twitter.classList.remove("slide-in-right");
   }
 });
 
@@ -47,7 +50,7 @@ async function getGithubRepos(user) {
     `https://api.github.com/users/${user}/repos?sort=pushed`
   );
 
-  let repos = (await response.json()).slice(0, 6);
+  let repos = (await response.json()).slice(0, 3);
 
   // localStorage.setItem("repos", JSON.stringify(repos));
   // let repos = JSON.parse(localStorage.getItem("repos"));

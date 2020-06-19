@@ -142,6 +142,7 @@ body {
 
   .hero {
     height: 100vh;
+    max-height: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -457,6 +458,9 @@ body {
             text-align: center;
           }
         }
+        .accent {
+          color: var(--accent-primary);
+        }
       }
     }
     .footer {
@@ -477,6 +481,35 @@ body {
     p {
       margin: 0;
       padding: 1.3em 0px;
+    }
+
+    .social-float {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      background-color: var(--bg-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      bottom: 10px;
+      position: fixed;
+      right: -50px;
+      transition: ease-in-out var(--transition-speed);
+      a {
+        font-size: 1.5em;
+        color: var(--text-secondary);
+      }
+
+      &:hover {
+        a {
+          color: var(--accent-primary);
+        }
+      }
+    }
+
+    .slide-in-right {
+      right: 50px;
     }
   }
 
@@ -536,6 +569,9 @@ body {
   div.hero-mobile {
     display: flex;
   }
+  body .copy .slide-in-right {
+    right: 10px;
+  }
   .main {
     padding: 13% 0 0 0;
 
@@ -568,6 +604,7 @@ body {
           padding: 3em 20px;
           clear: both;
           text-align: left;
+
           .title {
             font-size: 32px;
             margin-bottom: 12px;
@@ -640,6 +677,12 @@ body {
         padding: 20px;
         clear: both;
         text-align: right;
+        border-radius: 10px;
+        transition: background-color ease-in var(--transition-speed);
+
+        &:hover {
+          background-color: var(--bg-secondary);
+        }
         &:not(:first-child) {
           margin-top: -60px;
         }
