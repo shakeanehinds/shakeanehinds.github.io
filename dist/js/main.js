@@ -44,19 +44,44 @@ function kill_motion() {
 }
 
 //   Remove hover effect from hero section
+function cacheChecker() {
+  let ticker =
+    JSON.parse(localStorage.getItem("payload")) == null
+      ? new Date().getTime() - 21600000
+      : JSON.parse(localStorage.getItem("payload")).timestamp;
+  let currentDate = new Date().getTime();
 
+  if (currentDate - ticker >= 21600000) {
+    console.log("Fetching fresh repos...");
+
+    return true;
+  }
+  console.log("Not enough time passed to fetch repos from github");
+
+  return false;
+}
 async function getGithubRepos(user) {
-  // get the latest repositories that are being worked on
-  let response = await fetch(
-    `https://api.github.com/users/${user}/repos?sort=pushed`
-  );
+  let repos = {};
+  let stale = false;
 
-  let repos = (await response.json()).slice(0, 3);
+  if (cacheChecker()) {
+    // get the latest repositories that are being worked on
+    let response = await fetch(
+      `https://api.github.com/users/${user}/repos?sort=pushed`
+    );
 
-  // localStorage.setItem("repos", JSON.stringify(repos));
-  // let repos = JSON.parse(localStorage.getItem("repos"));
+    repos = (await response.json()).slice(0, 3);
 
-  // Fetch repositories
+    let payload = {
+      timestamp: new Date().getTime(),
+      repositories: repos,
+    };
+    localStorage.setItem("payload", JSON.stringify(payload));
+    stale = true;
+    // Fetch repositories
+  } else {
+    repos = JSON.parse(localStorage.getItem("payload")).repositories;
+  }
 
   const projectListing = document.getElementById("project-listings");
 
@@ -112,14 +137,18 @@ async function getGithubRepos(user) {
     cta.appendChild(link);
 
     curr_repo = repo.name;
-    let languages = await fetch(
-      `https://api.github.com/repos/${user}/${curr_repo}/languages`
-    );
+    let languages = {};
+    let langs = [];
 
-    let langs = await languages.json();
-
-    // localStorage.setItem("langs", JSON.stringify(langs));
-    // langs = JSON.parse(localStorage.getItem("langs"));
+    if (stale) {
+      languages = await fetch(
+        `https://api.github.com/repos/${user}/${curr_repo}/languages`
+      );
+      langs = await languages.json();
+      localStorage.setItem(curr_repo, JSON.stringify(langs));
+    } else {
+      langs = JSON.parse(localStorage.getItem(curr_repo));
+    }
 
     for (let lang of Object.keys(langs)) {
       let tagIcon = document.createElement("div");
