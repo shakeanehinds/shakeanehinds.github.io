@@ -1,5 +1,6 @@
 window.onload = async () => {
   getGithubRepos("shakeanehinds");
+  // insertDate();
 };
 
 // ======= Handling menu color changes on scrolling =====//
@@ -169,4 +170,13 @@ function iconfilter(icon) {
   });
   let res = iconClass.length > 0 ? iconClass[0].class : "fas fa-code";
   return res.split(" ");
+}
+
+// Get current date for footer
+
+function insertDate() {
+  let copy = document.getElementById("copyright");
+  var d = new Date();
+  copy.innerHTML =
+    copy.innerHTML + ` | <i class="far fa-copyright"></i> ` + d.getFullYear();
 }
