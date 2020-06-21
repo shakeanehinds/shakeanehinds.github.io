@@ -456,6 +456,9 @@ body {
             text-align: center;
           }
         }
+        .tweets {
+          justify-self: stretch;
+        }
         .accent {
           color: var(--accent-primary);
         }
