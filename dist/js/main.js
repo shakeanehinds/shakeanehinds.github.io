@@ -47,11 +47,11 @@ function kill_motion() {
 function cacheChecker() {
   let ticker =
     JSON.parse(localStorage.getItem("payload")) == null
-      ? new Date().getTime() - 21600000
+      ? new Date().getTime() - 10800000
       : JSON.parse(localStorage.getItem("payload")).timestamp;
   let currentDate = new Date().getTime();
 
-  if (currentDate - ticker >= 21600000) {
+  if (currentDate - ticker >= 10800000) {
     console.log("Fetching fresh repos...");
 
     return true;
