@@ -360,7 +360,6 @@ body {
         display: flex;
         flex-direction: column;
         justify-items: center;
-        align-items: center;
         padding: 5em 0;
         // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         // column-gap: 2em;
@@ -444,7 +443,7 @@ body {
           img {
             text-align: center;
             width: 100%;
-            border-radius: 100%;
+            // border-radius: 100%;
           }
         }
         .section-content {
@@ -622,7 +621,7 @@ body {
               left: -54px;
               transform: translateY(-50%);
               right: -73px;
-              z-index: 1000;
+              z-index: 1;
             }
             &.big:before {
               width: 24px;
@@ -701,7 +700,7 @@ body {
             top: 50%;
             transform: translateY(-50%);
             right: -73px;
-            z-index: 1000;
+            z-index: 1;
           }
           &.big:before {
             width: 24px;
