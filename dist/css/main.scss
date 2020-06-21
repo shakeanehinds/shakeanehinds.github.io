@@ -336,10 +336,6 @@ body {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       }
-
-      &:nth-last-child(1) {
-      }
-
       &:nth-child(2n) {
         background-color: var(--bg-primary);
         color: var(--bg-light-primary);
