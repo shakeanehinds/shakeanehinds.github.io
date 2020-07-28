@@ -33,12 +33,21 @@ window.addEventListener("scroll", function (e) {
 
 //   Remove hover effect from hero section
 
-function kill_motion() {
+function kill_motion(direct) {
+  toggle = document.getElementById("chck");
   right = document.getElementById("right");
   left = document.getElementById("left");
-  times = document.getElementById("timesbtn");
-  times.classList.toggle("fa-times-circle");
-  times.classList.toggle("fa-check-circle");
+
+  if (direct) {
+    right.classList.toggle("right-hov");
+    left.classList.toggle("left-hov");
+    return;
+  }
+  if (toggle.checked == true) {
+    toggle.checked = false;
+  } else {
+    toggle.checked = true;
+  }
   right.classList.toggle("right-hov");
   left.classList.toggle("left-hov");
 }

@@ -52,10 +52,13 @@
                 </div>
             </div>
             <div class="info-left">
-                <div href="#" onclick="kill_motion()">
-                    <div class="inner">
-                        <i id="timesbtn" class="fas fa-times-circle"></i>
+                <div href="#">
+                    <div class="inner" onclick="kill_motion()">
                         <h3 class="tip">Hover effect</h3>
+                        <input id="chck" value="true" type="checkbox" onclick="kill_motion(this.value)">
+                        <label for="chck" class="check-trail">
+                            <span class="check-handler"></span>
+                        </label>
                     </div>
                 </div>
             </div>
