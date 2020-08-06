@@ -201,6 +201,8 @@ function iconfilter(icon) {
     { name: "python", class: "fab fa-python" },
     { name: "php", class: "fab fa-php" },
     { name: "java", class: "fab fa-java" },
+    { name: "shell", class: "fas fa-terminal" },
+    { name: "docker", class: "fab fa-docker" },
   ];
 
   let iconClass = languageBank.filter(function (e) {
