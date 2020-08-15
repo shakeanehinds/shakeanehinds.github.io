@@ -4,36 +4,34 @@ window.onload = async () => {
 };
 
 // ======= Handling menu color changes on scrolling =====//
-
 window.addEventListener("scroll", function (e) {
-  var nav = document.getElementById("nav");
-  var nav_links = document.getElementById("nav-links");
-  var links = nav_links.getElementsByTagName("a");
-  var i;
-  var twitter = document.getElementById("twitter");
+  let nav = document.getElementById("nav");
+  let nav_links = document.getElementById("nav-links");
+  let links = nav_links.getElementsByTagName("a");
+
+  let twitter = document.getElementById("twitter");
   if (
     document.documentElement.scrollTop ||
     document.body.scrollTop > window.innerHeight
   ) {
     nav.classList.add("nav-bg");
-    for (i = 0; i < links.length; i++) {
+    for (let i = 0; i < links.length; i++) {
       links[i].style.color = "white";
     }
     twitter.classList.add("slide-in-right");
   } else {
     nav.classList.remove("nav-bg");
-    for (i = 0; i < links.length; i++) {
+    for (let i = 0; i < links.length; i++) {
       links[i].style.color = "#23232e";
     }
     twitter.classList.remove("slide-in-right");
   }
 });
-
 // ======= Handling menu color changes on scrolling =====//
 
-//   Remove hover effect from hero section
+// ======= Remove hover effect from hero section ======= //
 
-function kill_motion(direct) {
+function killMotion(direct) {
   toggle = document.getElementById("chck");
   right = document.getElementById("right");
   left = document.getElementById("left");
@@ -51,8 +49,9 @@ function kill_motion(direct) {
   right.classList.toggle("right-hov");
   left.classList.toggle("left-hov");
 }
+// ======= Remove hover effect from hero section ======= //
 
-//   Remove hover effect from hero section
+// ======= Check if data is cached and stale ======= //
 function cacheChecker() {
   let ticker =
     JSON.parse(localStorage.getItem("payload")) == null
@@ -62,24 +61,28 @@ function cacheChecker() {
 
   if (currentDate - ticker >= 10800000) {
     console.log("Fetching fresh repos...");
-
     return true;
   }
-  console.log("Not enough time passed to fetch repos from github");
-
+  console.log("Not enough time passed to fetch new repos from github");
   return false;
 }
+// ======= Check if data is cached and stale ======= //
+
+// ======= Fetch Repos for user ======= //
 async function getGithubRepos(user) {
   let repos = {};
   let stale = false;
 
   if (cacheChecker()) {
     // get the latest repositories that are being worked on
-    let response = await fetch(
-      `https://api.github.com/users/${user}/repos?sort=pushed`
-    );
-
-    repos = (await response.json()).slice(0, 3);
+    try {
+      let response = await fetch(
+        `https://api.github.com/users/${user}/repos?sort=pushed`
+      );
+      repos = (await response.json()).slice(0, 3);
+    } catch (error) {
+      console.log(error);
+    }
 
     let payload = {
       timestamp: new Date().getTime(),
@@ -92,8 +95,12 @@ async function getGithubRepos(user) {
     repos = JSON.parse(localStorage.getItem("payload")).repositories;
   }
 
-  const projectListing = document.getElementById("project-listings");
+  buildCard(repos, stale, user);
+}
+// ======= Fetch Repos for user ======= //
 
+// ======= Generate projects cars ======= //
+async function buildCard(repos, stale, user) {
   for (let repo of repos) {
     let projectCard = document.createElement("div");
     projectCard.classList.add("project-card");
@@ -165,14 +172,12 @@ async function getGithubRepos(user) {
 
       let lang_ = document.createElement("h6");
 
-      // Attempting to add icons for langauges
-      let results = iconfilter(lang);
+      // Adding icons for langauges
+      let results = iconFilter(lang);
       lang_.innerText = lang;
       lang_.innerHTML =
         `<i class="${results[0]} ${results[1]}"></i>          ` +
         lang_.innerHTML;
-
-      // console.log(iconfilter(lang));
 
       tagIcon.appendChild(lang_);
       tags.appendChild(tagIcon);
@@ -185,12 +190,13 @@ async function getGithubRepos(user) {
     content.appendChild(cta);
     projectCard.appendChild(cardImage);
     projectCard.appendChild(content);
-
     document.getElementById("projects").appendChild(projectCard);
   }
 }
+// ======= Generate projects cars ======= //
 
-function iconfilter(icon) {
+// ======= Find icons for project languages ======= //
+function iconFilter(icon) {
   let languageBank = [
     { name: "javascript", class: "fab fa-js" },
     { name: "css", class: "fab fa-css3-alt" },
@@ -211,12 +217,13 @@ function iconfilter(icon) {
   let res = iconClass.length > 0 ? iconClass[0].class : "fas fa-code";
   return res.split(" ");
 }
+// ======= Find icons for project languages ======= //
 
-// Get current date for footer
-
+// ======= Get current date for footer ======= //
 function insertDate() {
   let copy = document.getElementById("copyright");
-  var d = new Date();
+  let d = new Date();
   copy.innerHTML =
     copy.innerHTML + ` | <i class="far fa-copyright"></i> ` + d.getFullYear();
 }
+// ======= Get current date for footer ======= //
